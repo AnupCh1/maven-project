@@ -11,7 +11,7 @@ pipeline
     
     stage ('code compile')
     { steps
-     { withMaven(globalMavenSettingsConfig: 'dd6c1e780899f66207b83dbc9c56c633a6549dbe', jdk: 'JDK_HOME', maven: 'MVN_HOME') 
+     { withMaven(globalMavenSettingsConfig: '8ae396264414ba7caa66a96515e71fafa5d47a47', jdk: 'JDK_HOME', maven: 'MVN_HOME') 
       { sh 'mvn package' }
      }
     }
