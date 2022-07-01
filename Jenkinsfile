@@ -19,7 +19,7 @@ pipeline
     { steps
      { sh 'docker build -t anup2507/devopsdocker:v1 .'}
     }
-    stage {'push docker image'}
+    stage ('push docker image')
     { steps
      { withDockerRegistry(credentialsId: 'DockerHubAccount', url: 'https://index.docker.io/v1/') }
       {
