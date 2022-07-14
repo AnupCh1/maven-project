@@ -13,7 +13,7 @@ pipeline
     { steps
      { withMaven(globalMavenSettingsConfig: '3d9bff58-0c9d-4517-8121-0a2cc8838556', jdk: 'JDK_HOME', maven: 'MVN_HOME') 
       { sh 'mvn compile' }
-     }
+     }}
    
 } }
 
