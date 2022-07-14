@@ -11,18 +11,10 @@ pipeline
     
     stage ('code compile')
     { steps
-     { withMaven(globalMavenSettingsConfig: 'a88684ae-4007-4ca4-b918-301de49cf4a5', jdk: 'JDK_HOME', maven: 'MVN_HOME') 
-      { sh 'mvn package' }
+     { withMaven(globalMavenSettingsConfig: '3d9bff58-0c9d-4517-8121-0a2cc8838556', jdk: 'JDK_HOME', maven: 'MVN_HOME') 
+      { sh 'mvn compile' }
      }
-    }
-    stage ("docker image build") 
-    { steps
-     { sh 'docker build -t anup2507/devopsdocker:v1 .'}
-    }
-    stage ('push docker image')
-    { steps
-     { withDockerRegistry(credentialsId: 'DockerHub', url: 'https://index.docker.io/v1/') }
-     {sh 'docker push anup2507/devopsdocker:v1'}
+   
 } } }
 
 
